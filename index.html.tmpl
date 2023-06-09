@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Anthony Nixon</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/df88468b70.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="assets/images/favicon.ico?v=2" type="image/x-icon" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5Q7RBGCKV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F5Q7RBGCKV');
+    </script>
+</head>
+
+<body>
+    <div id="profile">
+        <img id="userPhoto" src="assets/images/profile.png" alt="Profile picture of {{ .name }}">
+        <div id="userName">
+            <h1>{{ .name }}</h1>
+            <p>{{ .location }}</p>
+        </div>
+    </div>
+    <div id="links">
+    {{ range .links }}
+      <a {{ if .Attributes.rel }}rel="{{.Attributes.Rel}}"{{end}} href="{{.URL}}" class="link" target="_blank"><i class="{{.Icon}}" aria-hidden="true"></i> {{.Title}}</a>
+    {{ end }}
+    </div>
+</body>
+</html>

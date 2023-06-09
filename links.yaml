@@ -1,0 +1,22 @@
+title: Anthony Nixon
+name: Anthony Nixon
+location: Minnesota, USA
+links:
+  - title: Mastodon
+    icon: fa-brands fa-mastodon
+    url: https://mn.social/@AnthonyNixon
+    attributes:
+      rel: me
+  - title: Twitter
+    icon: fa-brands fa-twitter
+    url: https://twitter.com/AnthonyNixon
+  - title: Github
+    icon: fa fa-github
+    url: https://github.com/AnthonyNixon
+  - title: LinkedIn
+    icon: fa fa-linkedin
+    url: https://www.linkedin.com/in/nixon-anthony/
+  - title: Email
+    icon: fa fa-envelope
+    url: mailto:mail@ajn.me
+    
