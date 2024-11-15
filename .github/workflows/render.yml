@@ -29,5 +29,5 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
       - run: gcloud storage cp index.html gs://links.ajn.me
-      - run: gsutil -m rsync -d -c -r assets gs://links.ajn.me
-      - run: gsutil -m rsync -d -c -r images gs://links.ajn.me
+      - run: gcloud storage cp --recursive assets gs://links.ajn.me
+      - run: gcloud storage cp --recursive images gs://links.ajn.me
