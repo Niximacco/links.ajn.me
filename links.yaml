@@ -2,17 +2,17 @@ title: Anthony Niximacco
 name: Anthony Niximacco
 location: Minnesota, USA
 links:
+  - title: Bluesky
+    icon: fa-brands fa-bluesky
+    url: https://bsky.app/profile/anthony.niximacco.social
+  - title: Github
+    icon: fa fa-github
+    url: https://github.com/AnthonyNixon
   - title: Mastodon
     icon: fa-brands fa-mastodon
     url: https://mn.social/@Niximacco
     attributes:
       rel: me
-  - title: Bluesky
-    icon: fa-brands fa-bluesky
-    url: https://anthony.niximacco.social
-  - title: Github
-    icon: fa fa-github
-    url: https://github.com/AnthonyNixon
   - title: LinkedIn
     icon: fa fa-linkedin
     url: https://www.linkedin.com/in/anthony-niximacco/
