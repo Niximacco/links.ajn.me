@@ -27,7 +27,4 @@ jobs:
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
-      - run: gsutil -m rsync -d -c -r public gs://meta.earthisacube.com
-      - run: gsutil -m setmeta -h "Cache-Control:public, max-age=3600" gs://meta.earthisacube.com/**/*.html
-      - run: gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://meta.earthisacube.com/js/*.js
-      - run: gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://meta.earthisacube.com/css/*.css
+      - run: gcloud storage cp index.html gs://links.ajn.me
