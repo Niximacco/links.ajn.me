@@ -30,4 +30,3 @@ jobs:
         uses: google-github-actions/setup-gcloud@v0
       - run: gcloud storage cp index.html gs://links.ajn.me
       - run: gcloud storage cp --recursive assets gs://links.ajn.me
-      - run: gcloud storage cp --recursive images gs://links.ajn.me
