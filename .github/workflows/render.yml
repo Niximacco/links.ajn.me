@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Render links page
-        uses: anthonynixon/links-template-render-github-action@v1.0.0
+        uses: anthonynixon/links-template-render-github-action@v1.1.0
         with:
           template: "index.html.tmpl"
           values: "links.yaml"
