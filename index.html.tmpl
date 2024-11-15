@@ -27,7 +27,7 @@
     </div>
     <div id="links">
     {{ range .Links }}
-      <a {{ if .Attributes.rel }}rel="{{.Attributes.Rel}}"{{end}} href="{{.URL}}" class="link" target="_blank"><i class="{{.Icon}}" aria-hidden="true"></i> {{.Title}}</a>
+      <a {{ if .Attributes.Rel }}rel="{{.Attributes.Rel}}"{{end}} href="{{.URL}}" class="link" target="_blank"><i class="{{.Icon}}" aria-hidden="true"></i> {{.Title}}</a>
     {{ end }}
     </div>
 </body>
