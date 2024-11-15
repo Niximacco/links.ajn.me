@@ -13,11 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Render links page
-        uses: anthonynixon/links-template-render-github-action@v0.2.3
+        uses: anthonynixon/links-template-render-github-action@v1.0.0
         with:
           template: "index.html.tmpl"
           values: "links.yaml"
           outputFile: "index.html"
+          gitSHA: ${{ github.sha }}
 
       - name: Google Auth
         id: auth
@@ -28,3 +29,5 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
       - run: gcloud storage cp index.html gs://links.ajn.me
+      - run: gsutil -m rsync -d -c -r assets gs://links.ajn.me
+      - run: gsutil -m rsync -d -c -r images gs://links.ajn.me
