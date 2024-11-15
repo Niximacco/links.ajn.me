@@ -19,17 +19,15 @@ jobs:
           values: "links.yaml"
           outputFile: "index.html"
 
-      # Authenticate to Google Cloud
-      - name: Authenticate to Google Cloud
-        id: 'auth'
-        uses: 'google-github-actions/auth@v1'
+      - name: Google Auth
+        id: auth
+        uses: 'google-github-actions/auth@v0'
         with:
-          credentials_json: '${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}'
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-      # Upload the rendered file to your Google Cloud Bucket
-      - name: Upload to GCS
-        uses: google-github-actions/upload-cloud-storage@v1
-        with:
-          path: ./ # Or specify the directory where your index.html is located
-          destination: your-bucket-name/path/to/destination # Replace with your bucket and path
-          credentials_json: '${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}'
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+      - run: gsutil -m rsync -d -c -r public gs://meta.earthisacube.com
+      - run: gsutil -m setmeta -h "Cache-Control:public, max-age=3600" gs://meta.earthisacube.com/**/*.html
+      - run: gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://meta.earthisacube.com/js/*.js
+      - run: gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://meta.earthisacube.com/css/*.css
