@@ -1,5 +1,5 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Render links.ajn.me content
+# Simple workflow for deploying static content to Google Cloud Bucket
+name: Render and Deploy to GCS
 
 on:
   # Runs on pushes targeting the default branch
@@ -11,14 +11,32 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-  
+  contents: read   
+
 jobs:
-  # Single deploy job since we're just deploying
-  links-template-render:
+  # Single deploy job 
+  render-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: anthonynixon/links-template-render-github-action@v0.2.0
+      - name: Render links page
+        uses: anthonynixon/links-template-render-github-action@v0.2.0
+        with:
+          template: "index.html.tmpl"
+          values: "links.yaml"
+          outputFile: "index.html"
+
+      # Authenticate to Google Cloud
+      - name: Authenticate to Google Cloud
+        id: 'auth'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}'
+
+      # Upload the rendered file to your Google Cloud Bucket
+      - name: Upload to GCS
+        uses: google-github-actions/upload-cloud-storage@v1
+        with:
+          path: ./ # Or specify the directory where your index.html is located
+          destination: your-bucket-name/path/to/destination # Replace with your bucket and path
+          credentials_json: '${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}'
