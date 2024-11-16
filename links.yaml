@@ -4,10 +4,13 @@ location: Minnesota, USA
 links:
   - title: Bluesky
     icon: fa-brands fa-bluesky
-    url: https://bsky.app/profile/anthony.niximacco.social
+    url: https://bsky.app/profile/anthony.niximac.co
   - title: Github
     icon: fa fa-github
     url: https://github.com/AnthonyNixon
+  - title: Matrix
+    icon: fa-regular fa-message
+    url: https://matrix.to/#/@anthony:matrix.niximacco.chat
   - title: Mastodon
     icon: fa-brands fa-mastodon
     url: https://mn.social/@Niximacco
