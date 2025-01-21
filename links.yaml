@@ -5,17 +5,20 @@ links:
   - title: Bluesky
     icon: fa-brands fa-bluesky
     url: https://bsky.app/profile/anthonyniximac.co
-  - title: Github
-    icon: fa fa-github
-    url: https://github.com/Niximacco
   - title: Matrix
     icon: fa-regular fa-message
     url: https://matrix.to/#/@anthony:matrix.niximacco.chat
+  - title: Discord
+    icon: fa-brands fa-discord
+    url: https://discordapp.com/users/609429618939658258
   - title: Mastodon
     icon: fa-brands fa-mastodon
     url: https://mn.social/@Niximacco
     attributes:
       rel: me
+  - title: Github
+    icon: fa fa-github
+    url: https://github.com/Niximacco
   - title: LinkedIn
     icon: fa fa-linkedin
     url: https://www.linkedin.com/in/anthony-niximacco/
